@@ -1,12 +1,132 @@
 #!ipxe
-###
-### netboot.xyz-custom menu
-###
+# WayneTech Unified Boot Matrix
+# Architect: Literate
+# Purpose: Centralized OS Deployment Interface for Bat‑Ops
+
+set menu-timeout 8000
+set menu-default main
 
 :start
-echo Hello world!
-sleep 10
-goto custom_exit
+menu WayneTech PXE Matrix — Operational OS Index
 
-:custom_exit
-exit 0
+item --gap -- ================== CORE DISTROS ==================
+
+item debian "Debian Stable • Enterprise‑grade server base
+   “Consistency is the backbone of any long‑term infrastructure.” — Bruce Wayne"
+
+item ubuntu "Ubuntu LTS • Broad hardware support, friendly defaults
+   “Sometimes the simplest tool is the one people actually use.” — Lucius Fox"
+
+item fedora "Fedora Server • Cutting‑edge Red Hat technologies
+   “Innovation favors the bold — and the well‑prepared.” — Barbara Gordon"
+
+item rocky "Rocky Linux • Enterprise‑stable RHEL‑compatible platform
+   “Reliability is a virtue. Even in software.” — Alfred Pennyworth"
+
+item arch "Arch Linux • Minimal, rolling, fully customizable
+   “Control every variable, and the system never surprises you.” — Edward Nygma"
+
+item alpine "Alpine Linux • Ultra‑light, musl‑based, container‑ready
+   “Low power, low footprint — efficient by design.” — Pamela Isley"
+
+
+item --gap -- ================== RARE / SPECIAL DISTROS ==================
+
+item garuda "Garuda Linux • Performance‑tuned Arch system
+   “Power is nothing without responsiveness.” — Dick Grayson"
+
+item bazzite "Bazzite • Immutable Fedora‑based gaming OS
+   “Stability through immutability — elegant, really.” — Pamela Isley"
+
+item nobara "Nobara • Fedora‑based gaming & multimedia distro
+   “A little optimization goes a long way.” — Tim Drake"
+
+item nixos "NixOS • Declarative, reproducible system configuration
+   “Precision through reproducibility — that’s real control.” — Barbara Gordon"
+
+item gentoo "Gentoo • Source‑based, extreme customization
+   “Mastery requires patience — and absolute control.” — Ra’s al Ghul"
+
+item void "Void Linux • Lightweight, runit‑based independent distro
+   “Independence is strength — even in operating systems.” — Selina Kyle"
+
+item clearlinux "Clear Linux • Intel‑optimized performance distro
+   “Speed is a strategy — optimize everything.” — Lucius Fox"
+
+
+item --gap -- ================== RESCUE / FORENSICS ==================
+
+item systemrescue "SystemRescue • Full rescue toolkit
+   “When everything breaks, you need something that doesn’t.” — Bruce Wayne"
+
+item gparted "GParted Live • Partitioning & disk surgery
+   “Precision is everything.” — Leslie Thompkins"
+
+item clonezilla "Clonezilla • Imaging & cloning utility
+   “Replication is the fastest form of preparedness.” — Lucius Fox"
+
+item hirens "Hiren’s BootCD PE • Windows‑based rescue environment
+   “Sometimes you need to speak the language of the world.” — Bruce Wayne"
+
+item grml "GRML • Debian‑based rescue shell environment
+   “A sharp tool in the right hands is unstoppable.” — Alfred Pennyworth"
+
+item ubcd "Ultimate Boot CD • Hardware diagnostics suite
+   “Know your tools, know your limits.” — Harvey Bullock"
+
+
+item --gap -- ================== HYPERVISORS ==================
+
+item proxmox "Proxmox VE • Enterprise virtualization & clustering
+   “Infrastructure should scale as fast as your ambition.” — Bruce Wayne"
+
+item xcpng "XCP‑ng • Xen‑based hypervisor platform
+   “Isolation is a powerful defensive strategy.” — Jonathan Crane"
+
+item esxi "VMware ESXi • Industry‑standard hypervisor
+   “Stability is the foundation of any empire.” — Carmine Falcone"
+
+item harvester "Harvester • Cloud‑native HCI platform
+   “Unification brings strength — even to machines.” — Diana Prince"
+
+
+item --gap -- ================== BSD SYSTEMS ==================
+
+item freebsd "FreeBSD • Stable, secure, ZFS‑powered BSD
+   “Security isn’t a feature. It’s a philosophy.” — Harvey Dent"
+
+item openbsd "OpenBSD • Security‑first, meticulously audited BSD
+   “Perfection is a pursuit, not a destination.” — Edward Nygma"
+
+item netbsd "NetBSD • Portable, runs on anything
+   “Adaptability is the ultimate advantage.” — Barbara Gordon"
+
+
+item --gap -- ================== CLOUD / CONTAINER OS ==================
+
+item flatcar "Flatcar Linux • Immutable container‑focused OS
+   “Containers are the new frontier of control.” — Barbara Gordon"
+
+item coreos "Fedora CoreOS • Immutable, auto‑updating cloud OS
+   “Automation is the only way to stay ahead.” — Lucius Fox"
+
+item talos "Talos Linux • Kubernetes‑native, API‑driven OS
+   “Orchestration is power — wield it wisely.” — Bruce Wayne"
+
+
+item --gap -- ================== WINDOWS DEPLOYMENT ==================
+
+item winpe "Windows PE • Lightweight deployment & recovery
+   “Sometimes you need to speak the language of the world.” — Bruce Wayne"
+
+item winsetup "Windows Setup • Network‑based Windows installation
+   “Compatibility keeps the world turning.” — Lucius Fox"
+
+
+item --gap -- ================== EXIT ==================
+item shell "iPXE Shell"
+item reboot "Reboot"
+item exit "Boot Local Disk"
+
+choose --timeout ${menu-timeout} --default ${menu-default} selected
+chain ${selected}.ipxe || goto start
