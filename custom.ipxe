@@ -1,63 +1,89 @@
 #!ipxe
 # WayneTech Unified Boot Matrix
-# Architect: Literate
-# Purpose: Centralized OS Deployment Interface for Bat‑Ops
+# Single-file, chain-only, Gotham-aligned PXE index
 
 set menu-timeout 8000
 set menu-default main
 
 :start
-menu WayneTech PXE Matrix — Operational OS Index
+menu WayneTech PXE Matrix — Operational OS Codex
 
-item --gap -- ================== CORE DISTROS ==================
+item --gap -- ================== WAYNETECH APPROVED ==================
 
-item debian "Debian Stable • Enterprise‑grade server base
-   “Consistency is the backbone of any long‑term infrastructure.” — Bruce Wayne"
+item debian "Debian Stable • Enterprise-grade server base
+   “Consistency is the backbone of any long-term infrastructure.” — Bruce Wayne"
 
 item ubuntu "Ubuntu LTS • Broad hardware support, friendly defaults
    “Sometimes the simplest tool is the one people actually use.” — Lucius Fox"
 
-item fedora "Fedora Server • Cutting‑edge Red Hat technologies
-   “Innovation favors the bold — and the well‑prepared.” — Barbara Gordon"
-
-item rocky "Rocky Linux • Enterprise‑stable RHEL‑compatible platform
+item rocky "Rocky Linux • Enterprise-stable RHEL-compatible platform
    “Reliability is a virtue. Even in software.” — Alfred Pennyworth"
 
-item arch "Arch Linux • Minimal, rolling, fully customizable
-   “Control every variable, and the system never surprises you.” — Edward Nygma"
+item fedora "Fedora Server • Cutting-edge Red Hat technologies
+   “Innovation favors the bold — and the well-prepared.” — Barbara Gordon"
 
-item alpine "Alpine Linux • Ultra‑light, musl‑based, container‑ready
-   “Low power, low footprint — efficient by design.” — Pamela Isley"
+item alpine "Alpine Linux • Ultra-light, musl-based, container-ready
+   “Efficiency is elegance.” — Lucius Fox"
 
-
-item --gap -- ================== RARE / SPECIAL DISTROS ==================
-
-item garuda "Garuda Linux • Performance‑tuned Arch system
-   “Power is nothing without responsiveness.” — Dick Grayson"
-
-item bazzite "Bazzite • Immutable Fedora‑based gaming OS
-   “Stability through immutability — elegant, really.” — Pamela Isley"
-
-item nobara "Nobara • Fedora‑based gaming & multimedia distro
-   “A little optimization goes a long way.” — Tim Drake"
-
-item nixos "NixOS • Declarative, reproducible system configuration
-   “Precision through reproducibility — that’s real control.” — Barbara Gordon"
-
-item gentoo "Gentoo • Source‑based, extreme customization
-   “Mastery requires patience — and absolute control.” — Ra’s al Ghul"
-
-item void "Void Linux • Lightweight, runit‑based independent distro
-   “Independence is strength — even in operating systems.” — Selina Kyle"
-
-item clearlinux "Clear Linux • Intel‑optimized performance distro
+item clearlinux "Clear Linux • Intel-optimized performance distro
    “Speed is a strategy — optimize everything.” — Lucius Fox"
 
 
-item --gap -- ================== RESCUE / FORENSICS ==================
+item --gap -- ================== BAT-FAM BESTS ==================
+
+item arch "Arch Linux • Minimal, rolling, fully customizable
+   “Control every variable, and the system never surprises you.” — Dick Grayson"
+
+item garuda "Garuda Linux • Performance-tuned Arch system
+   “Power is nothing without responsiveness.” — Jason Todd"
+
+item nobara "Nobara • Fedora-based gaming & multimedia distro
+   “A little optimization goes a long way.” — Tim Drake"
+
+item bazzite "Bazzite • Immutable Fedora-based gaming OS
+   “Stability through immutability — elegant, really.” — Barbara Gordon"
+
+item mx-xfce "MX Linux XFCE • Lightweight, Debian-based desktop
+   “Quiet tools make the biggest impact.” — Cassandra Cain"
+
+item mx-kde "MX Linux KDE • Polished Debian-based KDE desktop
+   “Refinement is a form of power.” — Damian Wayne"
+
+item mint "Linux Mint • Familiar, user-friendly desktop
+   “A familiar interface lets you focus on the mission.” — Stephanie Brown"
+
+
+item --gap -- ================== ROGUES RECOMMENDED ==================
+
+item kali "Kali Linux • Pen-testing and offensive security
+   “Every system has a weakness — you just have to know where to look.” — Edward Nygma"
+
+item parrot "Parrot Security OS • Lightweight privacy-focused pen-testing
+   “Sometimes the quietest tools are the most dangerous.” — Jonathan Crane"
+
+item blackarch "BlackArch Linux • Arch-based offensive security toolkit
+   “Chaos is just another form of opportunity.” — Jack Napier"
+
+item tails "Tails OS • Amnesic privacy-focused live OS
+   “Disappear without a trace — that’s real power.” — Oswald Cobblepot"
+
+item qubes "Qubes OS • Compartmentalized security-focused desktop
+   “Isolation preserves integrity — even in extreme conditions.” — Victor Fries"
+
+item whonix "Whonix • Tor-based anonymity workstation
+   “Masks aren’t just for faces.” — Harleen Quinzel"
+
+item void "Void Linux (musl) • Lightweight independent distro
+   “Independence is the only true freedom.” — Roman Sionis"
+
+item gentoo-h "Gentoo Hardened • Source-based hardened environment
+   “Perfection is forged, not found.” — Ra’s al Ghul"
+
+
+item --gap -- ================== GCPD / ALLIES ==================
 
 item systemrescue "SystemRescue • Full rescue toolkit
-   “When everything breaks, you need something that doesn’t.” — Bruce Wayne"
+   “When everything breaks, you need something that doesn’t.” — Jim Gordon"
 
 item gparted "GParted Live • Partitioning & disk surgery
    “Precision is everything.” — Leslie Thompkins"
@@ -65,14 +91,41 @@ item gparted "GParted Live • Partitioning & disk surgery
 item clonezilla "Clonezilla • Imaging & cloning utility
    “Replication is the fastest form of preparedness.” — Lucius Fox"
 
-item hirens "Hiren’s BootCD PE • Windows‑based rescue environment
-   “Sometimes you need to speak the language of the world.” — Bruce Wayne"
-
-item grml "GRML • Debian‑based rescue shell environment
-   “A sharp tool in the right hands is unstoppable.” — Alfred Pennyworth"
+item grml "GRML • Debian-based rescue shell environment
+   “A sharp tool in the right hands is unstoppable.” — Harvey Bullock"
 
 item ubcd "Ultimate Boot CD • Hardware diagnostics suite
    “Know your tools, know your limits.” — Harvey Bullock"
+
+
+item --gap -- ================== ARKHAM ANALYSTS ==================
+
+item nixos "NixOS • Declarative, reproducible system configuration
+   “Precision through reproducibility — that’s real control.” — Hugo Strange"
+
+item gentoo "Gentoo • Source-based, extreme customization
+   “Mastery requires patience.” — Hugo Strange"
+
+item freebsd "FreeBSD • Stable, secure, ZFS-powered BSD
+   “Security isn’t a feature. It’s a philosophy.” — Harvey Dent"
+
+item openbsd "OpenBSD • Security-first, meticulously audited BSD
+   “Perfection is a pursuit, not a destination.” — Edward Nygma"
+
+item netbsd "NetBSD • Portable, runs on almost anything
+   “Adaptability is the ultimate advantage.” — Barbara Gordon"
+
+
+item --gap -- ================== CLOUD / IMMUTABLE OPS ==================
+
+item flatcar "Flatcar Linux • Immutable container-focused OS
+   “Containers are the new frontier of control.” — Barbara Gordon"
+
+item coreos "Fedora CoreOS • Immutable, auto-updating cloud OS
+   “Automation is the only way to stay ahead.” — Lucius Fox"
+
+item talos "Talos Linux • Kubernetes-native, API-driven OS
+   “Orchestration is power — wield it wisely.” — Bruce Wayne"
 
 
 item --gap -- ================== HYPERVISORS ==================
@@ -80,53 +133,288 @@ item --gap -- ================== HYPERVISORS ==================
 item proxmox "Proxmox VE • Enterprise virtualization & clustering
    “Infrastructure should scale as fast as your ambition.” — Bruce Wayne"
 
-item xcpng "XCP‑ng • Xen‑based hypervisor platform
+item xcpng "XCP-ng • Xen-based hypervisor platform
    “Isolation is a powerful defensive strategy.” — Jonathan Crane"
 
-item esxi "VMware ESXi • Industry‑standard hypervisor
-   “Stability is the foundation of any empire.” — Carmine Falcone"
-
-item harvester "Harvester • Cloud‑native HCI platform
+item harvester "Harvester • Cloud-native HCI platform
    “Unification brings strength — even to machines.” — Diana Prince"
 
 
-item --gap -- ================== BSD SYSTEMS ==================
-
-item freebsd "FreeBSD • Stable, secure, ZFS‑powered BSD
-   “Security isn’t a feature. It’s a philosophy.” — Harvey Dent"
-
-item openbsd "OpenBSD • Security‑first, meticulously audited BSD
-   “Perfection is a pursuit, not a destination.” — Edward Nygma"
-
-item netbsd "NetBSD • Portable, runs on anything
-   “Adaptability is the ultimate advantage.” — Barbara Gordon"
-
-
-item --gap -- ================== CLOUD / CONTAINER OS ==================
-
-item flatcar "Flatcar Linux • Immutable container‑focused OS
-   “Containers are the new frontier of control.” — Barbara Gordon"
-
-item coreos "Fedora CoreOS • Immutable, auto‑updating cloud OS
-   “Automation is the only way to stay ahead.” — Lucius Fox"
-
-item talos "Talos Linux • Kubernetes‑native, API‑driven OS
-   “Orchestration is power — wield it wisely.” — Bruce Wayne"
-
-
-item --gap -- ================== WINDOWS DEPLOYMENT ==================
+item --gap -- ================== WINDOWS OPS ==================
 
 item winpe "Windows PE • Lightweight deployment & recovery
    “Sometimes you need to speak the language of the world.” — Bruce Wayne"
 
-item winsetup "Windows Setup • Network‑based Windows installation
+item winsetup "Windows Setup • Network-based Windows installation
    “Compatibility keeps the world turning.” — Lucius Fox"
 
 
-item --gap -- ================== EXIT ==================
+item --gap -- ================== UTILITIES ==================
 item shell "iPXE Shell"
 item reboot "Reboot"
 item exit "Boot Local Disk"
 
-choose --timeout ${menu-timeout} --default ${menu-default} selected
-chain ${selected}.ipxe || goto start
+choose --timeout ${menu-timeout} --default ${menu-default} selected || goto start
+goto ${selected}
+
+
+############################
+# WAYNETECH APPROVED
+############################
+
+:debian
+kernel http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux
+initrd http://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot || goto failed
+
+:ubuntu
+kernel http://archive.ubuntu.com/ubuntu/dists/noble/main/installer-amd64/current/legacy-images/netboot/ubuntu-installer/amd64/linux
+initrd http://archive.ubuntu.com/ubuntu/dists/noble/main/installer-amd64/current/legacy-images/netboot/ubuntu-installer/amd64/initrd.gz
+boot || goto failed
+
+:rocky
+kernel https://download.rockylinux.org/pub/rocky/9/BaseOS/x86_64/os/images/pxeboot/vmlinuz
+initrd https://download.rockylinux.org/pub/rocky/9/BaseOS/x86_64/os/images/pxeboot/initrd.img
+boot || goto failed
+
+:fedora
+kernel https://download.fedoraproject.org/pub/fedora/linux/releases/41/Server/x86_64/os/images/pxeboot/vmlinuz
+initrd https://download.fedoraproject.org/pub/fedora/linux/releases/41/Server/x86_64/os/images/pxeboot/initrd.img
+boot || goto failed
+
+:alpine
+kernel http://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/netboot/vmlinuz-lts
+initrd http://dl-cdn.alpinelinux.org/alpine/v3.20/releases/x86_64/netboot/initramfs-lts
+boot || goto failed
+
+:clearlinux
+# Example: adjust to current Clear Linux live image kernel/initrd
+kernel https://cdn.download.clearlinux.org/releases/current/clear/live/vmlinuz
+initrd https://cdn.download.clearlinux.org/releases/current/clear/live/initrd
+boot || goto failed
+
+
+############################
+# BAT-FAM BESTS
+############################
+
+:arch
+kernel https://mirror.rackspace.com/archlinux/boot/x86_64/vmlinuz-linux
+initrd https://mirror.rackspace.com/archlinux/boot/x86_64/initramfs-linux.img
+boot || goto failed
+
+:garuda
+# Example: adjust to current Garuda ISO kernel/initrd or use netboot.xyz custom ISO
+kernel https://iso.builds.garudalinux.org/latest/garuda/dr460nized/vmlinuz-linux-zen
+initrd https://iso.builds.garudalinux.org/latest/garuda/dr460nized/initramfs-linux-zen.img
+boot || goto failed
+
+:nobara
+# Example: adjust to current Nobara ISO kernel/initrd
+kernel https://nobaraproject.org/latest/vmlinuz
+initrd https://nobaraproject.org/latest/initrd.img
+boot || goto failed
+
+:bazzite
+# Example: adjust to current Bazzite ISO kernel/initrd
+kernel https://download.bazzite.gg/latest/vmlinuz
+initrd https://download.bazzite.gg/latest/initrd.img
+boot || goto failed
+
+:mx-xfce
+# Example: MX Linux XFCE ISO kernel/initrd via HTTP (update paths as needed)
+kernel http://mxlinux.org/isos/latest/mx-xfce/vmlinuz
+initrd http://mxlinux.org/isos/latest/mx-xfce/initrd.gz
+boot || goto failed
+
+:mx-kde
+kernel http://mxlinux.org/isos/latest/mx-kde/vmlinuz
+initrd http://mxlinux.org/isos/latest/mx-kde/initrd.gz
+boot || goto failed
+
+:mint
+# Example: Mint ISO kernel/initrd (often Ubuntu-like layout)
+kernel http://mirrors.edge.kernel.org/linuxmint/stable/21.3/linux/vmlinuz
+initrd http://mirrors.edge.kernel.org/linuxmint/stable/21.3/linux/initrd.lz
+boot || goto failed
+
+
+############################
+# ROGUES RECOMMENDED
+############################
+
+:kali
+kernel https://http.kali.org/kali/dists/kali-rolling/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux
+initrd https://http.kali.org/kali/dists/kali-rolling/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot || goto failed
+
+:parrot
+# Example: Parrot netinstall kernel/initrd
+kernel https://deb.parrotsec.org/parrot/dists/stable/main/installer-amd64/current/images/netboot/debian-installer/amd64/linux
+initrd https://deb.parrotsec.org/parrot/dists/stable/main/installer-amd64/current/images/netboot/debian-installer/amd64/initrd.gz
+boot || goto failed
+
+:blackarch
+# Typically boot via ISO kernel/initrd; adjust to current paths
+kernel https://blackarch.org/iso/blackarch-linux-live.iso-vmlinuz
+initrd https://blackarch.org/iso/blackarch-linux-live.iso-initrd
+boot || goto failed
+
+:tails
+# Tails is usually ISO-booted; consider chaining to netboot.xyz custom ISO
+chain https://boot.netboot.xyz || goto failed
+
+:qubes
+# Qubes OS often ISO-booted; chain to netboot.xyz or custom ISO handler
+chain https://boot.netboot.xyz || goto failed
+
+:whonix
+# Whonix is VM-focused; you may prefer to just chain to netboot.xyz
+chain https://boot.netboot.xyz || goto failed
+
+:void
+kernel https://alpha.de.repo.voidlinux.org/live/current/void-x86_64-ROOTFS/vmlinuz
+initrd https://alpha.de.repo.voidlinux.org/live/current/void-x86_64-ROOTFS/initrd
+boot || goto failed
+
+:gentoo-h
+# Gentoo minimal ISO kernel/initrd; adjust to current release
+kernel https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/current-install-amd64-minimal/vmlinuz
+initrd https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/current-install-amd64-minimal/initrd
+boot || goto failed
+
+
+############################
+# GCPD / ALLIES
+############################
+
+:systemrescue
+kernel https://sourceforge.net/projects/systemrescuecd/files/sysresccd-x86/current/sysresccd.iso-vmlinuz
+initrd https://sourceforge.net/projects/systemrescuecd/files/sysresccd-x86/current/sysresccd.iso-initrd
+boot || goto failed
+
+:gparted
+kernel https://downloads.sourceforge.net/project/gparted/gparted-live/stable/vmlinuz
+initrd https://downloads.sourceforge.net/project/gparted/gparted-live/stable/initrd.img
+boot || goto failed
+
+:clonezilla
+kernel https://clonezilla.org/downloads/stable/vmlinuz
+initrd https://clonezilla.org/downloads/stable/initrd.img
+boot || goto failed
+
+:grml
+kernel https://download.grml.org/grml64-full_2024.02/vmlinuz
+initrd https://download.grml.org/grml64-full_2024.02/initrd.img
+boot || goto failed
+
+:ubcd
+# UBCD is ISO-based; chain to netboot.xyz custom ISO or your own handler
+chain https://boot.netboot.xyz || goto failed
+
+
+############################
+# ARKHAM ANALYSTS
+############################
+
+:nixos
+# NixOS minimal ISO kernel/initrd; adjust to current channel
+kernel https://channels.nixos.org/nixos-24.05/latest-nixos-minimal-x86_64-linux/vmlinuz
+initrd https://channels.nixos.org/nixos-24.05/latest-nixos-minimal-x86_64-linux/initrd
+boot || goto failed
+
+:gentoo
+# Same as gentoo-h but you can customize kernel params
+kernel https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/current-install-amd64-minimal/vmlinuz
+initrd https://bouncer.gentoo.org/fetch/root/all/releases/amd64/autobuilds/current-install-amd64-minimal/initrd
+boot || goto failed
+
+:freebsd
+kernel https://download.freebsd.org/ftp/releases/amd64/amd64/ISO-IMAGES/14.1/boot/kernel/kernel
+initrd https://download.freebsd.org/ftp/releases/amd64/amd64/ISO-IMAGES/14.1/boot/mfsroot.gz
+boot || goto failed
+
+:openbsd
+# OpenBSD PXE boot; often uses bsd.rd
+kernel http://ftp.openbsd.org/pub/OpenBSD/7.5/amd64/bsd.rd
+boot || goto failed
+
+:netbsd
+kernel http://ftp.netbsd.org/pub/NetBSD/NetBSD-10.0/amd64/installation/netboot/netbsd-INSTALL.gz
+boot || goto failed
+
+
+############################
+# CLOUD / IMMUTABLE OPS
+############################
+
+:flatcar
+# Flatcar PXE kernel/initrd; adjust to current stable
+kernel https://stable.release.flatcar-linux.net/amd64-usr/current/coreos_production_pxe.vmlinuz
+initrd https://stable.release.flatcar-linux.net/amd64-usr/current/coreos_production_pxe_image.cpio.gz
+boot || goto failed
+
+:coreos
+kernel https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/latest/x86_64/fedora-coreos-*-live-kernel-x86_64
+initrd https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/latest/x86_64/fedora-coreos-*-live-initramfs.x86_64.img
+boot || goto failed
+
+:talos
+# Talos Linux PXE kernel/initrd; adjust to your chosen version
+kernel https://factory.talos.dev/image/latest/vmlinuz
+initrd https://factory.talos.dev/image/latest/initramfs.xz
+boot || goto failed
+
+
+############################
+# HYPERVISORS
+############################
+
+:proxmox
+# Proxmox VE ISO kernel/initrd; adjust to current release
+kernel https://enterprise.proxmox.com/iso/proxmox-ve/vmlinuz
+initrd https://enterprise.proxmox.com/iso/proxmox-ve/initrd.img
+boot || goto failed
+
+:xcpng
+kernel https://mirrors.xcp-ng.org/netinstall/vmlinuz
+initrd https://mirrors.xcp-ng.org/netinstall/install.img
+boot || goto failed
+
+:harvester
+kernel https://releases.rancher.com/harvester/latest/harvester-vmlinuz-amd64
+initrd https://releases.rancher.com/harvester/latest/harvester-initrd-amd64
+boot || goto failed
+
+
+############################
+# WINDOWS OPS
+############################
+
+:winpe
+# Chain to your WinPE WIM boot environment or netboot.xyz WinPE builder
+chain https://boot.netboot.xyz || goto failed
+
+:winsetup
+# Chain to Windows network setup environment (WIM/WinPE server)
+chain https://boot.netboot.xyz || goto failed
+
+
+############################
+# UTILITIES
+############################
+
+:shell
+echo Entering iPXE shell...
+shell
+goto start
+
+:reboot
+reboot
+
+:exit
+exit
+
+:failed
+echo Boot failed, returning to menu...
+goto start
